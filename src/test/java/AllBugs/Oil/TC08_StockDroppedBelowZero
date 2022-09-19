@@ -1,0 +1,20 @@
+
+
+ TCO8
+ BugID:08
+ Priority:High
+ Summary:
+    After consuming stock, The user are still able to buy OIL.
+ Description:
+    Go to send request from  ' buy/:id/:quantity ' endpoint by using OIL id with more than we have in stock
+    In the response body, Negative numbers appear in the place of stock.
+
+ Expected Result:
+    {
+    "message": "There is no OIL fuel to purchase!"
+    }
+
+ Actual Result :
+    {
+        "message": "You have purchased 1 Litres at a cost of 0.6 there are -41 units remaining. Your orderid is beda2a27-3184-4e92-8ed4-acf3e1f8109c."
+    }

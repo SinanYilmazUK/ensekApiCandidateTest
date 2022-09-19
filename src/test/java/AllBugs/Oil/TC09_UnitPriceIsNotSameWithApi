@@ -1,0 +1,22 @@
+
+
+ TCO9
+ BugID:09
+ Priority:High
+ Summary:
+    The unit price of oil is not same with the response taken from /energy endpoint.
+ Description:
+    Go to send request from  ' buy/:id/:quantity ' endpoint by using oil id(4)
+    In the response body, The message contains wrong number when we compared with response which is coming from /energy endpoint.
+
+ Expected Result:
+      "oil": {
+            "energy_id": 4,
+            "price_per_unit": 0.5,      //Here, the unit price is 0.5 but same price is 0.6 at message body response.
+            "quantity_of_units": -40,
+            "unit_type": "Litres"
+        }
+ Actual Result :
+    {
+        "message": "You have purchased 1 Litres at a cost of 0.6 there are -35 units remaining. Your orderid is 06303847-dd48-4537-9f95-d4ff7474b58d."
+    }

@@ -1,0 +1,20 @@
+
+
+ TCO3
+ BugID:03
+ Priority:High
+ Summary:
+    After consuming stock, The user are still able to buy ELECTRIC.
+ Description:
+    Go to send request from  ' buy/:id/:quantity ' endpoint by using electric id with more than we have in the stock
+    In the response body, Negative numbers appear in the place of stock.
+
+ Expected Result:
+    {
+    "message": "There is no electric fuel to purchase!"
+    }
+
+ Actual Result :
+    {
+      "message": "You have purchased 4444 kWh at a cost of 2088.68 there are -9021 units remaining. Your order id is 2519dabe-6536-4270-b3ba-f04a0496c4e4."
+    }

@@ -1,0 +1,20 @@
+
+
+ TCO4
+ BugID:04
+ Priority:High
+ Summary:
+    After sending purchase request,The purchase and remaining amounts in the message given at the response body have been staying at cross .
+ Description:
+    Go to send request from  ' buy/:id/:quantity ' endpoint by using gas id(1)
+    In the response body, purchase amount had been placed into remaning amount place, and it is same for remaining amount as well
+
+ Expected Result:
+    {
+       "message": "You have purchased 1 m³ at a cost of 0.34 there are 55 units remaining. Your order id is 5e792be6-516f-4051-809c-0c07a1025785."
+    }
+
+ Actual Result :
+    {
+        "message": "You have purchased 55 m³ at a cost of 0.34 there are 1 units remaining. Your order id is 5e792be6-516f-4051-809c-0c07a*******."
+    }

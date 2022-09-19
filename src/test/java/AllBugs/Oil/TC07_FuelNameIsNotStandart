@@ -1,0 +1,26 @@
+
+
+ TCO7
+ BugID:07
+ Priority:Medium
+ Summary:
+    The fuel name of oil order response body is not as expected.
+ Description:
+    Go to send request from  ' buy/:id/:quantity ' endpoint by using oil id, and send request to /orders endpoint to see actual order list.
+    In the response body, the fuel name of oil response body starts with Capital letter.
+
+ Expected Result:
+    {
+           "fuel": "oil",
+           "id": "080d9823-e874-4b5b-99ff-2021f2a59b24",
+           "quantity": 25,
+           "time": "Thu, 10 Mar 2022 00:01:24 GMT"
+    }
+
+ Actual Result :
+    {
+          "Id": "49a8a344-8051-45ad-8787-415795edf82d",
+          "fuel": "Oil",                                    //Starts with Capital Letter
+          "quantity": 5,
+          "time": "Wed, 14 Sep 2022 17:27:34 GMT"
+    }

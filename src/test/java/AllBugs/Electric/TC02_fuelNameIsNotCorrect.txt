@@ -1,0 +1,26 @@
+
+ TCO2
+ BugID:02
+ Priority:Medium
+ Summary:
+    The name of fuel keyword is not as expected.
+ Description:
+    Go to send request from  ' buy/:id/:quantity ' endpoint by using electric id, and send request to /orders endpoint to see actual order list.
+    In the response body, the fuel name of electric response body is not correct.
+
+ Expected Result:
+
+    {
+            "fuel": "electric",                             //Fuel name should be seen like "electric"
+            "id": "080d9823-e874-4b5b-99ff-2021f2a59b25",
+            "quantity": 1,
+            "time": "Mon, 7 Feb 2022 00:01:24 GMT"
+    }
+
+ Actual Result :
+   {
+            "Id": "080d9823-e874-4b5b-99ff-2021f2a59b25",
+            "fuel": "Elec",                                 //Fuel name in actual result is "Elec".
+            "quantity": 1,
+            "time": "Mon, 7 Feb 2022 00:01:24 GMT"
+   }
